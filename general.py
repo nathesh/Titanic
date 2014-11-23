@@ -103,7 +103,7 @@ print 'Done.'
 print 'Naive Bayes'
 print 'Training'
 NaiveBayes = GaussianNB()
-NaiveBayes = gnb.fit( train_data[0::,1::], train_data[0::,0])
+NaiveBayes = NaiveBayes.fit( train_data[0::,1::], train_data[0::,0])
 
 print 'Predicting...'
 output = NaiveBayes.predict(test_data).astype(int)
