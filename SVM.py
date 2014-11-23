@@ -1,4 +1,6 @@
 from sklearn import svm
+import numpy as np
+import csv as csv
 
 def train(train_data):
 	print 'Training'
@@ -11,7 +13,7 @@ def predict(SVM,test_data):
 	output = SVM.predict(test_data).astype(int)
 	return output
 def output(ids,output):
-	predictions_file = open("myfirstSVM.csv", "wb")
+	predictions_file = open("output/myfirstSVM.csv", "wb")
 	open_file_object = csv.writer(predictions_file)
 	open_file_object.writerow(["PassengerId","Survived"])
 	open_file_object.writerows(zip(ids, output))
